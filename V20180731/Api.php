@@ -2,7 +2,153 @@
 
 namespace AlibabaCloud\Baas\V20180731;
 
+use AlibabaCloud\ApiResolverTrait;
 use AlibabaCloud\Rpc;
+
+/**
+ * Resolve Api based on the method name.
+ *
+ * @method DescribeAntRegions describeAntRegions(array $options = [])
+ * @method DescribeBlockchainConfigOption describeBlockchainConfigOption(array $options = [])
+ * @method DescribeDownloadPathsOfContractChain describeDownloadPathsOfContractChain(array $options = [])
+ * @method DescribeDownloadPathsOfNotaryChain describeDownloadPathsOfNotaryChain(array $options = [])
+ * @method DescribeLatest15Blocks describeLatest15Blocks(array $options = [])
+ * @method DescribeLatest15TransDigests describeLatest15TransDigests(array $options = [])
+ * @method DescribeMembers describeMembers(array $options = [])
+ * @method UpdateMemberRole updateMemberRole(array $options = [])
+ * @method CreateAccount createAccount(array $options = [])
+ * @method FreezeAccount freezeAccount(array $options = [])
+ * @method UnfreezeAccount unfreezeAccount(array $options = [])
+ * @method RenameBlockchain renameBlockchain(array $options = [])
+ * @method DescribeEthereumNode describeEthereumNode(array $options = [])
+ * @method DescribeEthereum describeEthereum(array $options = [])
+ * @method DescribeEthereumInvitee describeEthereumInvitee(array $options = [])
+ * @method ApproveEthereumInvitee approveEthereumInvitee(array $options = [])
+ * @method DescribeExplorerURL describeExplorerURL(array $options = [])
+ * @method DescribeNetstatURL describeNetstatURL(array $options = [])
+ * @method AcceptEthereumInvitation acceptEthereumInvitation(array $options = [])
+ * @method DescribeEthereumInvitaion describeEthereumInvitaion(array $options = [])
+ * @method CreateEthereumInvitation createEthereumInvitation(array $options = [])
+ * @method DescribeEthereumNodeLogs describeEthereumNodeLogs(array $options = [])
+ * @method UpdateEthereumClientUserPassword updateEthereumClientUserPassword(array $options = [])
+ * @method DescribeEthereumClientUsers describeEthereumClientUsers(array $options = [])
+ * @method DescribeEthereumNodeInfo describeEthereumNodeInfo(array $options = [])
+ * @method AddEthereumNode addEthereumNode(array $options = [])
+ * @method UpdateEthereumNode updateEthereumNode(array $options = [])
+ * @method DescribeEthereumNodes describeEthereumNodes(array $options = [])
+ * @method UpdateEthereum updateEthereum(array $options = [])
+ * @method DescribeEthereums describeEthereums(array $options = [])
+ * @method CreateEthereum createEthereum(array $options = [])
+ * @method UpdateEthereumNodeConfiguration updateEthereumNodeConfiguration(array $options = [])
+ * @method DescribeEthereumNodeConfiguration describeEthereumNodeConfiguration(array $options = [])
+ * @method DescribeEthereumDeletable describeEthereumDeletable(array $options = [])
+ * @method QueryEthereumDeletable queryEthereumDeletable(array $options = [])
+ * @method DestroyEthereum destroyEthereum(array $options = [])
+ * @method DescribeChaincodeCollectionConfig describeChaincodeCollectionConfig(array $options = [])
+ * @method DescribeResourceType describeResourceType(array $options = [])
+ * @method DescribeTransaction describeTransaction(array $options = [])
+ * @method DescribeMetric describeMetric(array $options = [])
+ * @method DescribeBlock describeBlock(array $options = [])
+ * @method DescribeSchemaDetail describeSchemaDetail(array $options = [])
+ * @method DownloadSDK2 downloadSDK2(array $options = [])
+ * @method DescribeMySuccessfulApplication describeMySuccessfulApplication(array $options = [])
+ * @method CreateBlockchainApplication createBlockchainApplication(array $options = [])
+ * @method DescribeBlockchainSchema describeBlockchainSchema(array $options = [])
+ * @method ResetCertificate resetCertificate(array $options = [])
+ * @method DescribeTemplates describeTemplates(array $options = [])
+ * @method DescribeOssProperties describeOssProperties(array $options = [])
+ * @method DescribeMySuccessApplies describeMySuccessApplies(array $options = [])
+ * @method DescribeMyBlockchains describeMyBlockchains(array $options = [])
+ * @method DescribeBlockchainInfo describeBlockchainInfo(array $options = [])
+ * @method DescribeBlockchainCreateTask describeBlockchainCreateTask(array $options = [])
+ * @method DescribeBcSchema describeBcSchema(array $options = [])
+ * @method DescribeApplies describeApplies(array $options = [])
+ * @method DownloadAll downloadAll(array $options = [])
+ * @method GetBlockchainCreateTask getBlockchainCreateTask(array $options = [])
+ * @method DescribePeerLogs describePeerLogs(array $options = [])
+ * @method DescribeOrdererLogs describeOrdererLogs(array $options = [])
+ * @method GetOssProperties getOssProperties(array $options = [])
+ * @method UpdateSchema updateSchema(array $options = [])
+ * @method SchemaDetail schemaDetail(array $options = [])
+ * @method ResetUser resetUser(array $options = [])
+ * @method RejectUser rejectUser(array $options = [])
+ * @method QueryTransaction queryTransaction(array $options = [])
+ * @method QueryMetric queryMetric(array $options = [])
+ * @method QueryBlock queryBlock(array $options = [])
+ * @method OperateUser operateUser(array $options = [])
+ * @method InviteUser inviteUser(array $options = [])
+ * @method GetTemplates getTemplates(array $options = [])
+ * @method GetMySuccessApplies getMySuccessApplies(array $options = [])
+ * @method GetMyBlockchains getMyBlockchains(array $options = [])
+ * @method GetBlockchainInfo getBlockchainInfo(array $options = [])
+ * @method GetBcSchema getBcSchema(array $options = [])
+ * @method GetApplies getApplies(array $options = [])
+ * @method DownloadSignedData downloadSignedData(array $options = [])
+ * @method DownloadSdk downloadSdk(array $options = [])
+ * @method DownloadBizview downloadBizview(array $options = [])
+ * @method CreateBlockchainApply createBlockchainApply(array $options = [])
+ * @method ApplyBlockchain applyBlockchain(array $options = [])
+ * @method DescribeOrganizationDeletable describeOrganizationDeletable(array $options = [])
+ * @method DescribeConsortiumDeletable describeConsortiumDeletable(array $options = [])
+ * @method QueryConsortiumDeletable queryConsortiumDeletable(array $options = [])
+ * @method QueryOrganizationDeletable queryOrganizationDeletable(array $options = [])
+ * @method DeleteChaincode deleteChaincode(array $options = [])
+ * @method DescribeExplorer describeExplorer(array $options = [])
+ * @method DestroyOrganization destroyOrganization(array $options = [])
+ * @method DestroyConsortium destroyConsortium(array $options = [])
+ * @method DownloadOrganizationSDK downloadOrganizationSDK(array $options = [])
+ * @method SynchronizeChaincode synchronizeChaincode(array $options = [])
+ * @method ResetOrganizationUserPassword resetOrganizationUserPassword(array $options = [])
+ * @method DescribeInvitationCode describeInvitationCode(array $options = [])
+ * @method CheckOrganizationDomain checkOrganizationDomain(array $options = [])
+ * @method CheckConsortiumDomain checkConsortiumDomain(array $options = [])
+ * @method DescribeRootDomain describeRootDomain(array $options = [])
+ * @method DescribeOrganizationSpecs describeOrganizationSpecs(array $options = [])
+ * @method DescribeEcosphereSpecs describeEcosphereSpecs(array $options = [])
+ * @method DescribeConsortiumSpecs describeConsortiumSpecs(array $options = [])
+ * @method DescribeConsortiumOrderers describeConsortiumOrderers(array $options = [])
+ * @method DescribeConsortiumConfig describeConsortiumConfig(array $options = [])
+ * @method DescribeTasks describeTasks(array $options = [])
+ * @method CreateOrganizationUser createOrganizationUser(array $options = [])
+ * @method CreateEcosphere createEcosphere(array $options = [])
+ * @method CreateConsortium createConsortium(array $options = [])
+ * @method DescribeOrganizationUserCerts describeOrganizationUserCerts(array $options = [])
+ * @method DescribeOrganizations describeOrganizations(array $options = [])
+ * @method CreateOrganization createOrganization(array $options = [])
+ * @method DescribeOrganizationChaincodes describeOrganizationChaincodes(array $options = [])
+ * @method DescribeOrganizationChannels describeOrganizationChannels(array $options = [])
+ * @method DescribeConsortiumChannels describeConsortiumChannels(array $options = [])
+ * @method CreateChannel createChannel(array $options = [])
+ * @method DescribeChannelMembers describeChannelMembers(array $options = [])
+ * @method DescribeOrganization describeOrganization(array $options = [])
+ * @method DescribeOrganizationPeers describeOrganizationPeers(array $options = [])
+ * @method DescribeOrganizationUsers describeOrganizationUsers(array $options = [])
+ * @method DescribeRegions describeRegions(array $options = [])
+ * @method ConfirmConsortiumMember confirmConsortiumMember(array $options = [])
+ * @method CreateConsortiumMember createConsortiumMember(array $options = [])
+ * @method CreateChannelMember createChannelMember(array $options = [])
+ * @method DescribeConsortiums describeConsortiums(array $options = [])
+ * @method JoinChannel joinChannel(array $options = [])
+ * @method DescribeOrgnaizationChaincodes describeOrgnaizationChaincodes(array $options = [])
+ * @method DescribeConsortiumChaincodes describeConsortiumChaincodes(array $options = [])
+ * @method CreateChaincode createChaincode(array $options = [])
+ * @method InstallChaincode installChaincode(array $options = [])
+ * @method UpgradeChaincode upgradeChaincode(array $options = [])
+ * @method InstantiateChaincode instantiateChaincode(array $options = [])
+ * @method DescribeConsortiumAdminStatus describeConsortiumAdminStatus(array $options = [])
+ * @method DescribeChaincodeUploadPolicy describeChaincodeUploadPolicy(array $options = [])
+ * @method DescribeInvitationList describeInvitationList(array $options = [])
+ * @method DescribeOrganizationMembers describeOrganizationMembers(array $options = [])
+ * @method DescribeConsortiumMembers describeConsortiumMembers(array $options = [])
+ * @method DescribeCandidateOrganizations describeCandidateOrganizations(array $options = [])
+ * @method DescribeInviter describeInviter(array $options = [])
+ * @method DescribeConsortiumMemberApproval describeConsortiumMemberApproval(array $options = [])
+ * @method AcceptInvitation acceptInvitation(array $options = [])
+ */
+class BaasApiResolver
+{
+    use ApiResolverTrait;
+}
 
 class V20180731Rpc extends Rpc
 {
@@ -181,15 +327,15 @@ class ApproveEthereumInvitee extends V20180731Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $invitee
      *
      * @return $this
      */
-    public function withInvitee(array $value)
+    public function withInvitee(array $invitee)
     {
-        $this->data['Invitee'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Invitee.' . ($i + 1) . '.Id'] = $value[$i]['Id'];
+        $this->data['Invitee'] = $invitee;
+        foreach ($invitee as $depth1 => $depth1Value) {
+            $this->options['query']['Invitee.' . ($depth1 + 1) . '.Id'] = $depth1Value['Id'];
         }
 
         return $this;
@@ -345,15 +491,15 @@ class CreateEthereum extends V20180731Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $node
      *
      * @return $this
      */
-    public function withNode(array $value)
+    public function withNode(array $node)
     {
-        $this->data['Node'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Node.' . ($i + 1) . '.Name'] = $value[$i]['Name'];
+        $this->data['Node'] = $node;
+        foreach ($node as $depth1 => $depth1Value) {
+            $this->options['query']['Node.' . ($depth1 + 1) . '.Name'] = $depth1Value['Name'];
         }
 
         return $this;
@@ -1099,17 +1245,17 @@ class CreateEcosphere extends V20180731Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $organization
      *
      * @return $this
      */
-    public function withOrganization(array $value)
+    public function withOrganization(array $organization)
     {
-        $this->data['Organization'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Organization.' . ($i + 1) . '.Domain'] = $value[$i]['Domain'];
-            $this->options['query']['Organization.' . ($i + 1) . '.Name'] = $value[$i]['Name'];
-            $this->options['query']['Organization.' . ($i + 1) . '.Description'] = $value[$i]['Description'];
+        $this->data['Organization'] = $organization;
+        foreach ($organization as $depth1 => $depth1Value) {
+            $this->options['query']['Organization.' . ($depth1 + 1) . '.Domain'] = $depth1Value['Domain'];
+            $this->options['query']['Organization.' . ($depth1 + 1) . '.Name'] = $depth1Value['Name'];
+            $this->options['query']['Organization.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
         }
 
         return $this;
@@ -1149,15 +1295,15 @@ class CreateConsortium extends V20180731Rpc
     public $method = 'PUT';
 
     /**
-     * @param array $value
+     * @param array $organization
      *
      * @return $this
      */
-    public function withOrganization(array $value)
+    public function withOrganization(array $organization)
     {
-        $this->data['Organization'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Organization.' . ($i + 1) . '.Id'] = $value[$i]['Id'];
+        $this->data['Organization'] = $organization;
+        foreach ($organization as $depth1 => $depth1Value) {
+            $this->options['query']['Organization.' . ($depth1 + 1) . '.Id'] = $depth1Value['Id'];
         }
 
         return $this;
@@ -1253,15 +1399,15 @@ class CreateChannel extends V20180731Rpc
     public $method = 'PUT';
 
     /**
-     * @param array $value
+     * @param array $organization
      *
      * @return $this
      */
-    public function withOrganization(array $value)
+    public function withOrganization(array $organization)
     {
-        $this->data['Organization'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Organization.' . ($i + 1) . '.Id'] = $value[$i]['Id'];
+        $this->data['Organization'] = $organization;
+        foreach ($organization as $depth1 => $depth1Value) {
+            $this->options['query']['Organization.' . ($depth1 + 1) . '.Id'] = $depth1Value['Id'];
         }
 
         return $this;
@@ -1329,15 +1475,15 @@ class ConfirmConsortiumMember extends V20180731Rpc
     public $method = 'PUT';
 
     /**
-     * @param array $value
+     * @param array $organization
      *
      * @return $this
      */
-    public function withOrganization(array $value)
+    public function withOrganization(array $organization)
     {
-        $this->data['Organization'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Organization.' . ($i + 1) . '.Id'] = $value[$i]['Id'];
+        $this->data['Organization'] = $organization;
+        foreach ($organization as $depth1 => $depth1Value) {
+            $this->options['query']['Organization.' . ($depth1 + 1) . '.Id'] = $depth1Value['Id'];
         }
 
         return $this;
@@ -1357,15 +1503,15 @@ class CreateConsortiumMember extends V20180731Rpc
     public $method = 'PUT';
 
     /**
-     * @param array $value
+     * @param array $organization
      *
      * @return $this
      */
-    public function withOrganization(array $value)
+    public function withOrganization(array $organization)
     {
-        $this->data['Organization'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Organization.' . ($i + 1) . '.Id'] = $value[$i]['Id'];
+        $this->data['Organization'] = $organization;
+        foreach ($organization as $depth1 => $depth1Value) {
+            $this->options['query']['Organization.' . ($depth1 + 1) . '.Id'] = $depth1Value['Id'];
         }
 
         return $this;
@@ -1383,15 +1529,15 @@ class CreateChannelMember extends V20180731Rpc
     public $method = 'PUT';
 
     /**
-     * @param array $value
+     * @param array $organization
      *
      * @return $this
      */
-    public function withOrganization(array $value)
+    public function withOrganization(array $organization)
     {
-        $this->data['Organization'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Organization.' . ($i + 1) . '.Id'] = $value[$i]['Id'];
+        $this->data['Organization'] = $organization;
+        foreach ($organization as $depth1 => $depth1Value) {
+            $this->options['query']['Organization.' . ($depth1 + 1) . '.Id'] = $depth1Value['Id'];
         }
 
         return $this;
