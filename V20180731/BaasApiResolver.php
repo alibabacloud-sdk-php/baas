@@ -8,6 +8,12 @@ use AlibabaCloud\Rpc;
 /**
  * Resolve Api based on the method name.
  *
+ * @method UpdateAntChainConsortium updateAntChainConsortium(array $options = [])
+ * @method CreateSmartContractJob createSmartContractJob(array $options = [])
+ * @method StartSmartContractJob startSmartContractJob(array $options = [])
+ * @method DescribeSmartContractResult describeSmartContractResult(array $options = [])
+ * @method DescribeSmartContractJobStatus describeSmartContractJobStatus(array $options = [])
+ * @method DescribeSmartContractJobs describeSmartContractJobs(array $options = [])
  * @method DescribeSmartContractJobsByName describeSmartContractJobsByName(array $options = [])
  * @method CreateOwnAccount createOwnAccount(array $options = [])
  * @method DescribeMemberRole describeMemberRole(array $options = [])
@@ -121,7 +127,6 @@ use AlibabaCloud\Rpc;
  * @method CreateOrganizationUser createOrganizationUser(array $options = [])
  * @method CreateEcosphere createEcosphere(array $options = [])
  * @method CreateConsortium createConsortium(array $options = [])
- * @method DescribeOrganizationUserCerts describeOrganizationUserCerts(array $options = [])
  * @method DescribeOrganizations describeOrganizations(array $options = [])
  * @method CreateOrganization createOrganization(array $options = [])
  * @method DescribeOrganizationChaincodes describeOrganizationChaincodes(array $options = [])
@@ -169,6 +174,198 @@ class V20180731Rpc extends Rpc
 
     /** @var string */
     public $method = 'POST';
+}
+
+/**
+ * @method string getName()
+ * @method string getConsortiumId()
+ */
+class UpdateAntChainConsortium extends V20180731Rpc
+{
+
+    /** @var string */
+    public $method = 'PUT';
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withName($value)
+    {
+        $this->data['Name'] = $value;
+        $this->options['form_params']['Name'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withConsortiumId($value)
+    {
+        $this->data['ConsortiumId'] = $value;
+        $this->options['form_params']['ConsortiumId'] = $value;
+
+        return $this;
+    }
+}
+
+class CreateSmartContractJob extends V20180731Rpc
+{
+
+    /** @var string */
+    public $method = 'PUT';
+}
+
+/**
+ * @method string getJobId()
+ * @method string getSourceType()
+ * @method string getSourceOpt()
+ * @method string getJobName()
+ */
+class StartSmartContractJob extends V20180731Rpc
+{
+
+    /** @var string */
+    public $method = 'PUT';
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withJobId($value)
+    {
+        $this->data['JobId'] = $value;
+        $this->options['form_params']['JobId'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withSourceType($value)
+    {
+        $this->data['SourceType'] = $value;
+        $this->options['form_params']['SourceType'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withSourceOpt($value)
+    {
+        $this->data['SourceOpt'] = $value;
+        $this->options['form_params']['SourceOpt'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withJobName($value)
+    {
+        $this->data['JobName'] = $value;
+        $this->options['form_params']['JobName'] = $value;
+
+        return $this;
+    }
+}
+
+/**
+ * @method string getJobId()
+ */
+class DescribeSmartContractResult extends V20180731Rpc
+{
+
+    /** @var string */
+    public $method = 'PUT';
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withJobId($value)
+    {
+        $this->data['JobId'] = $value;
+        $this->options['form_params']['JobId'] = $value;
+
+        return $this;
+    }
+}
+
+/**
+ * @method string getJobId()
+ */
+class DescribeSmartContractJobStatus extends V20180731Rpc
+{
+
+    /** @var string */
+    public $method = 'PUT';
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withJobId($value)
+    {
+        $this->data['JobId'] = $value;
+        $this->options['form_params']['JobId'] = $value;
+
+        return $this;
+    }
+}
+
+/**
+ * @method string getSize()
+ * @method string getStart()
+ */
+class DescribeSmartContractJobs extends V20180731Rpc
+{
+
+    /** @var string */
+    public $method = 'PUT';
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withSize($value)
+    {
+        $this->data['Size'] = $value;
+        $this->options['form_params']['Size'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function withStart($value)
+    {
+        $this->data['Start'] = $value;
+        $this->options['form_params']['Start'] = $value;
+
+        return $this;
+    }
 }
 
 /**
@@ -4226,43 +4423,6 @@ class CreateConsortium extends V20180731Rpc
     {
         $this->data['PricingCycle'] = $value;
         $this->options['form_params']['PricingCycle'] = $value;
-
-        return $this;
-    }
-}
-
-/**
- * @method string getOrganizationId()
- * @method string getUsername()
- */
-class DescribeOrganizationUserCerts extends V20180731Rpc
-{
-
-    /** @var string */
-    public $method = 'PUT';
-
-    /**
-     * @param string $value
-     *
-     * @return $this
-     */
-    public function withOrganizationId($value)
-    {
-        $this->data['OrganizationId'] = $value;
-        $this->options['form_params']['OrganizationId'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $value
-     *
-     * @return $this
-     */
-    public function withUsername($value)
-    {
-        $this->data['Username'] = $value;
-        $this->options['form_params']['Username'] = $value;
 
         return $this;
     }
