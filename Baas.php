@@ -5,8 +5,8 @@ namespace AlibabaCloud\Baas;
 use AlibabaCloud\Client\Resolver\VersionResolver;
 
 /**
- * @deprecated
+ * @method static V20180731\BaasApiResolver v20180731()
  */
-class BaasVersion extends VersionResolver
+class Baas extends VersionResolver
 {
 }
